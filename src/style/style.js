@@ -318,7 +318,7 @@ class Style extends Evented {
         }
         this._changed = false; // avoid triggering redundant style update after adding initial sources
         if (json.sprite) {
-            this._loadSprite(json.sprite);
+            this._loadSprite(json.sprite, json.sprite_format || "png");
         } else {
             this.imageManager.setLoaded(true);
             this.dispatcher.broadcast('spriteLoaded', true);
@@ -390,8 +390,8 @@ class Style extends Evented {
         }
     }
 
-    _loadSprite(url: string) {
-        this._spriteRequest = loadSprite(url, this.map._requestManager, (err, images) => {
+    _loadSprite(url: string, format: string) {
+        this._spriteRequest = loadSprite(url, format, this.map._requestManager, (err, images) => {
             this._spriteRequest = null;
             if (err) {
                 this.fire(new ErrorEvent(err));
