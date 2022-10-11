@@ -70,6 +70,7 @@ export type StyleSpecification = {|
     "fog"?: FogSpecification,
     "sources": {[_: string]: SourceSpecification},
     "sprite"?: string,
+    "sprite_format"?: string,
     "glyphs"?: string,
     "transition"?: TransitionSpecification,
     "projection"?: ProjectionSpecification,

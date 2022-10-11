@@ -78,8 +78,13 @@
     },
     "sprite": {
       "type": "string",
-      "doc": "A base URL for retrieving the sprite image and metadata. The extensions `.png`, `.json` and scale factor `@2x.png` will be automatically appended. This property is required if any layer uses the `background-pattern`, `fill-pattern`, `line-pattern`, `fill-extrusion-pattern`, or `icon-image` properties. The URL must be absolute, containing the [scheme, authority and path components](https://en.wikipedia.org/wiki/URL#Syntax).",
+      "doc": "A base URL for retrieving the sprite image and metadata. The extensions `.png` (or sprite_format if it's defined in style), `.json` and scale factor `@2x.png` will be automatically appended. This property is required if any layer uses the `background-pattern`, `fill-pattern`, `line-pattern`, `fill-extrusion-pattern`, or `icon-image` properties. The URL must be absolute, containing the [scheme, authority and path components](https://en.wikipedia.org/wiki/URL#Syntax).",
       "example": "mapbox://sprites/mapbox/bright-v8"
+    },
+    "sprite_format": {
+      "type": "string",
+      "doc": "Sprite image format. If not defined `.png` is used",
+      "example": "webp"
     },
     "glyphs": {
       "type": "string",

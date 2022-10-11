@@ -11,6 +11,7 @@ import type {Callback} from '../types/callback.js';
 import type {Cancelable} from '../types/cancelable.js';
 
 export default function(baseURL: string,
+                          imageFormat: string,
                           requestManager: RequestManager,
                           callback: Callback<{[_: string]: StyleImage}>): Cancelable {
     let json: any, image, error;
@@ -25,7 +26,7 @@ export default function(baseURL: string,
         }
     });
 
-    let imageRequest = getImage(requestManager.transformRequest(requestManager.normalizeSpriteURL(baseURL, format, '.png'), ResourceType.SpriteImage), (err, img) => {
+    let imageRequest = getImage(requestManager.transformRequest(requestManager.normalizeSpriteURL(baseURL, format, `.${imageFormat}`), ResourceType.SpriteImage), (err, img) => {
         imageRequest = null;
         if (!error) {
             error = err;
