@@ -1,10 +1,3 @@
-/rollup/build/
-/dist/mapbox-gl*
-/dist/versions*
-/dist/style-spec
-*.es.js
-*.js.map
-*.cjs.map
 node_modules
 package-lock.json
 .vscode/
@@ -23,7 +16,6 @@ test/integration/**/test-results.xml
 test/integration/dist/**/*.js
 test/integration/dist/**/*.json
 .eslintcache
-src/style-spec/dist/index.cjs
 _batfish_site
 _batfish_tmp
 _site
